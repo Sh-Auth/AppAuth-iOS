@@ -341,7 +341,7 @@ static NSString *const kAdditionalHeadersKey = @"additionalHeaders";
       @"application/x-www-form-urlencoded; charset=UTF-8";
 
   NSURL *tokenRequestURL = [self tokenRequestURL];
-  NSMutableURLRequest *URLRequest = [[NSURLRequest requestWithURL:tokenRequestURL] mutableCopy];
+  NSMutableURLRequest *URLRequest = [[NSURLRequest requestWithURL:tokenRequestURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:120] mutableCopy];
   URLRequest.HTTPMethod = kHTTPPost;
   [URLRequest setValue:kHTTPContentTypeHeaderValue forHTTPHeaderField:kHTTPContentTypeHeaderKey];
 
