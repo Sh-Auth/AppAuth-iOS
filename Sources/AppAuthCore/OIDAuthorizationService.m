@@ -429,6 +429,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)performTokenRequest:(OIDTokenRequest *)request
     originalAuthorizationResponse:(OIDAuthorizationResponse *_Nullable)authorizationResponse
                          callback:(OIDTokenCallback)callback {
+  
+  NSLog(@"Test timeout");
 
   NSURLRequest *URLRequest = [request URLRequest];
   
